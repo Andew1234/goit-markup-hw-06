@@ -716,16 +716,13 @@ textarea {
   color: var(--primary-text-color);
 }
 
-.form-field {
-  display: flex;
-  flex-direction: column;
-
+.form-line {
   margin-top: 0px;
   margin-bottom: 10px;
-  gap: 10px;
 }
 
-.form-field label {
+.label-form {
+  display: flex;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
@@ -734,7 +731,7 @@ textarea {
   color: var(--secondary-text-color);
 }
 
-.form-field input {
+.form-line input {
   padding-left: 42px;
   height: 40px;
   width: 100%;
@@ -746,16 +743,12 @@ textarea {
 }
 
 .form-line {
-  display: block;
   position: relative;
-
-  color: var(--primary-text-color);
 }
 
 .icon-form {
-  display: inline-block;
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 15px;
   transform: translateY(50%);
 
@@ -811,6 +804,12 @@ textarea {
   border-color: var(--accent-color);
 }
 
+.accept-link {
+  display: inline-flex;
+  margin-left: 3px;
+  color: var(--accent-color);
+}
+
 .policy-container {
   display: flex;
   justify-content: center;
@@ -826,6 +825,7 @@ textarea {
 }
 
 .label-container {
+  display: flex;
   font-size: 14px;
   line-height: 1.71;
 
@@ -833,15 +833,38 @@ textarea {
 }
 
 .checkbox {
+  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.label-container::before {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  background-image: url(../images/icons/Vector.svg);
+}
+
+.checkbox:checked + .label-container::before {
+  border-color: transparent;
+  border-radius: 2px;
+  background-color: #2196f3;
+  background-image: url(../images/icons/icon\ check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: border-box;
 }
 
 .modal-btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 200px;
+  margin-bottom: 40px;
   padding: 10px 52px;
 }
 
